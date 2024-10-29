@@ -28,3 +28,61 @@ This tool is designed to simplify the creation of volumes for discrete archaeolo
 * Blender 4.2+
 * Mesh of archaeological context (ideally whole area)
 * Additional functionality with multiple properly aligned meshes
+
+#Documentation
+---
+## Base Mesh
+Object type. Input the mesh that makes up the "cut" of a context. For positive features, this would be the primary mesh.
+
+## Guide Mesh
+Object type. Optional input. For negative features, input enclosing mesh, for positive, the mesh of the context underneath.
+
+## Decimation Ratio
+Float type. Default value 0.9. Ratio of points remaining in mesh. Smaller, the ration, smaller the no of points. This will speed up calculations but will decrease accuracy.
+
+## XY/Z Variance
+Float type. Default value 5.0. Increases selection of points based on the variation of points within the Bezier Curve.
+
+## Normal Segmentation
+Boolean type. Groups normals into slope and flat surfaces. Automatically selects slopes.
+### Base
+Boolean type. Selects flat surfaces in 'Normal Segmentation'.
+### Nor Var
+Float type. Changes the categorisation thresholds for slope and flat surfaces.
+### Smo It
+Integer type. A smoothing algorithm that allows more generalised surface type categorisation.
+### Grouping Dist
+Float type. Groups normals for alternate method of generalised categorisation.
+
+## Max/Min Z
+Float type. 'Z' coordinate input for additional filtering.
+
+## Poly Res
+Integer type. Select the number of vertices in the polyline/polygon. This polygon is used as an additional level of filtering for meshes, as well as the capping layer of meshes without 'Guide Mesh' input.
+### Translation XYZ
+Vector type. Translate polyline/polygon. Useful if missing geometry in 'Base Mesh'
+
+## Output
+Menu type. Select between 'Mesh', 'Polyline', 'Polygon', 'SphereVolume', 'VoxelVolume'.
+Mesh: Raw mesh
+Polyline : polyline mesh.
+Polygon: polygonal mesh.
+SphereVolume: Iteratively fits a sphere to the raw mesh with the    addition of the 'Guide Mesh' or 'Polygon'.
+  
+### Volume Resolution
+Float type. 
+
+For SphereVolume selects the number of iterations.
+For VoxelVolume selects the voxel size.
+
+### Volume Sub Level
+Integer type. 
+
+For SphereVolume selects the subdivision level of the sphere.
+For VoxelVolume subdivides resulting voxel mesh and fits to raw mesh coordinates.
+
+## Simplify
+Boolean type. Selects if distance simplification is required.
+
+### End Resolution
+Float type. The max distance between vertices.
