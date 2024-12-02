@@ -1,4 +1,4 @@
-# Archaeology Segmentation and Volume Creation Tool (ArchSandV)
+# Archaeology Segmentation and Volume Creation Tool (ArchSV)
 ---
 ## Description:
 This tool is designed to simplify the creation of volumes for discrete archaeological features. Can be integrated with the Blender GIS addon to allow for reimporting into a GIS, maintaining georeferencing for meshes. Can be used in conjunction with 3D print addon to allow volume calculation.
