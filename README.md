@@ -25,11 +25,11 @@ This tool is designed to simplify the creation of volumes for discrete archaeolo
 * Texture manipulation
 
 ## Requirements
-* Blender 4.2+
+* Blender 4.5+
 * Mesh of archaeological context (ideally whole area)
 * Additional functionality with multiple properly aligned meshes
 
-#Documentation
+# Documentation
 ---
 ## Base Mesh
 Object type. Input the mesh that makes up the "cut" of a context. For positive features, this would be the primary mesh.
@@ -46,13 +46,9 @@ Float type. Default value 5.0. Increases selection of points based on the variat
 ## Normal Segmentation
 Boolean type. Groups normals into slope and flat surfaces. Automatically selects slopes.
 ### Base
-Boolean type. Selects flat surfaces in 'Normal Segmentation'.
-### Nor Var
-Float type. Changes the categorisation thresholds for slope and flat surfaces.
-### Smo It
-Integer type. A smoothing algorithm that allows more generalised surface type categorisation.
-### Grouping Dist
-Float type. Groups normals for alternate method of generalised categorisation.
+Boolean type. Selects flat surfaces in 'Slope Segmentation'.
+### Slope Fac
+Integer type. The factor with which to separate the slopes from bases.
 
 ## Max/Min Z
 Float type. 'Z' coordinate input for additional filtering.
